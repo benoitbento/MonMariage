@@ -4,6 +4,7 @@
     <v-main>
       <router-view />
       <v-container>
+      <CountDown/>
       </v-container>
     </v-main>
   </v-app>
@@ -11,12 +12,14 @@
 </template>
 
 <script >
+import CountDown from './components/CountDown.vue';
 import NavBar from './components/NavBar.vue';
 
 export default {
   name: 'App',
   components: {
-    NavBar
+    NavBar, 
+    CountDown
   }
 }
 </script>
