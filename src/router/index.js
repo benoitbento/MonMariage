@@ -2,15 +2,19 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 // Tes pages (à créer dans /views)
 import HomeView from '@/views/HomeView.vue'
-import HistoryView from '@/views/HistoryView.vue'
-import InfoView from '@/views/InfoView.vue'
-import RSVPView from '@/views/RSVPView.vue'
+import CommonHistory from '@/views/CommonHistory.vue'
+import AdressesWedding from '@/views/AdressesWedding.vue'
+import BookingAround from '@/views/BookingAround.vue'
+import DressCode from '@/views/DressCode.vue'
+import PlanningWholeDay from '@/views/PlanningWholeDay.vue'
 
 const routes = [
   { path: '/', component: HomeView },
-  { path: '/HistoryView', component: HistoryView },
-  { path: '/InfoView', component: InfoView },
-  { path: '/RSVPView', component: RSVPView },
+  { path: '/CommonHistory', component: CommonHistory },
+  { path: '/DressCode', component: DressCode },
+  { path: '/PlanningWholeDay', component: PlanningWholeDay },
+  { path: '/BookingAround', component: BookingAround },
+  { path: '/AdressesWedding', component: AdressesWedding },
 ]
 
 const router = createRouter({
