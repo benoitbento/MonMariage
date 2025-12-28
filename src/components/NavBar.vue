@@ -4,10 +4,12 @@
 
     <v-spacer />
 
-    <v-btn variant="text" to="/">Accueil</v-btn>
-    <v-btn variant="text" to="/HistoryView">Notre histoire</v-btn>
-    <v-btn variant="text" to="/InfoView">Infos pratiques</v-btn>
-    <v-btn variant="text" to="/RSVPViewsvp">RSVP</v-btn>
+    <v-btn variant="text" to="/">Bienvenue</v-btn>
+    <v-btn variant="text" to="/CommonHistory">Notre histoire</v-btn>
+    <v-btn variant="text" to="/DressCode">Dress code</v-btn>
+    <v-btn variant="text" to="/PlanningWholeDay">Planning</v-btn>
+    <v-btn variant="text" to="/BookingAround">Où séjourner</v-btn>
+    <v-btn variant="text" to="/AdressesWedding">Adresses</v-btn>
   </v-app-bar>
 </template>
 

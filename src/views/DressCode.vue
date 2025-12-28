@@ -1,9 +1,12 @@
 <template><v-container>
-        <h1>Confirmez votre présence</h1>
+        <h1>Notre histoire</h1>
+        TEST
     </v-container></template>
+
+
 <script>
 export default {
-    name: 'RSVPView'
+    name: 'DressCode'
   }
 
 </script>
