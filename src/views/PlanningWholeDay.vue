@@ -1,6 +1,18 @@
 <template><v-container>
-        <h1>Notre histoire</h1>
-        TEST
+        <h1>Planning</h1>
+        Le samedi :  
+
+Cérémonie civile 
+
+Cérémonie religieuse 
+
+Cortège 
+
+Vin d’honneur & repas 
+
+Le dimanche :  
+
+Brunch  
     </v-container></template>
 
 
