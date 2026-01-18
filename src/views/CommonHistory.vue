@@ -1,5 +1,6 @@
 <template>
   <PageContainer>
+    <WeddingCard>
     <section class="history">
       <div class="history__container">
         <h1 class="history__title">Notre histoire</h1>
@@ -14,11 +15,12 @@
         <p class="history__text">Comme le Nord était synonyme d’étranger voire d’étrange, nous voyageâmes en Belgique, à Lisbonne, à Budapest et bien entendu dans les Hauts-de-France. Nous nous fiançâmes le 15 juin 2025 lors d’un week-end à Budapest pour aller voir Imagine Dragons en concert, après 3 tentatives avortées, la quatrième fut la bonne et Elyne a dit OUI.</p>
       </div>
     </section>
+    </WeddingCard>
   </PageContainer>
 </template>
 
-<style scoped>
-.history__container {
+<!-- <style scoped> 
+/* .history__container {
   /* container layout now provided by the global .container component */
   margin: 0;
   padding: 0;
@@ -43,15 +45,15 @@
   .history__container {
     padding: 3rem 2rem;
   }
-}
-</style>
+} </style> -->
 
 <script>
 import PageContainer from '@/components/Container.vue'
+import WeddingCard from '@/components/WeddingCard.vue'
 
 export default {
   name: 'CommonHistory',
-  components: { PageContainer }
+  components: { PageContainer , WeddingCard }
 }
 
 </script>
