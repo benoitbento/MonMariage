@@ -25,39 +25,5 @@
 </script>
 
 <style scoped>
-.v-app-bar {
-  border-bottom: 1px solid #eee;
-}
 
-/* Dans ton composant Nav */
-.nav-links {
-  display: flex;
-  gap: 5px;
-  /* Espace entre les boutons */
-}
-
-.wedding-nav {
-  /* On augmente l'épaisseur à 2px ou 3px selon votre préférence */
-  border-bottom: 2px solid #dbd0ba !important; 
-  /* On s'assure que l'ombre de Vuetify ne cache pas la ligne */
-  box-shadow: none !important;
-}
-
-.nav-item {
-  text-decoration: none;
-  color: #4a4a4a;
-  padding: 8px 16px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-}
-
-/* Le fameux rectangle rose de la maquette */
-.router-link-active {
-  background-color: #f2d7d7 !important;
-  /* Rose poudré */
-  color: #000;
-  border-radius: 4px;
-}
 </style>

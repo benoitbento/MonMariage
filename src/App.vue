@@ -3,8 +3,6 @@
     <NavBar />
     <v-main>
       <router-view />
-      <v-container>
-      </v-container>
     </v-main>
   </v-app>
 
@@ -29,5 +27,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.v-main {
+  padding-top: 0 !important;
 }
 </style>
