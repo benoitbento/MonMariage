@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&display=swap');
+
 /* Global variables and container styles */
 :root{
+  --wedding-gold: #c5a059;
+  --wedding-bg: #f9f7f2;
+  --wedding-text: #4a4a4a;
   --color-text: #2b2b2b;
   --color-bg: #ffffff;
   --color-accent: #6c6cff; /* adjust your accent */
@@ -30,10 +35,76 @@ html,body,#app{
   padding:2rem 0;
 }
 
-/* utility */
-.text-center{ text-align:center; }
-.text-justify{ text-align:justify; }
-
 @media (min-width:1024px){
   :root{ --page-padding:2rem; }
+}
+
+.wedding-nav {
+  border-bottom: 1px solid #f0f0f0 !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Style spécifique pour les alliances dorées */
+.rings-icon circle {
+  /* On peut ajouter un léger dégradé ou effet brillant ici */
+  filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.1));
+}
+
+.nav-btn {
+  height: 100% !important;
+  border-radius: 0 !important; /* Carré parfait pour le bloc rose */
+  font-size: 0.75rem !important;
+  letter-spacing: 1.5px !important;
+  font-weight: 500 !important;
+  color: #444 !important;
+  padding: 0 20px !important;
+  transition: background-color 0.3s ease;
+}
+
+/* Application du Rose #E9C2C2 sur l'onglet actif */
+.v-btn--active {
+  background-color: #E9C2C2 !important;
+  color: #000 !important;
+  opacity: 1 !important;
+}
+
+/* Nettoyage des effets de survol par défaut */
+.nav-btn :deep(.v-btn__overlay) {
+  display: none;
+}
+
+.v-app-bar {
+  border-bottom: 1px solid #eee;
+}
+
+/* Dans ton composant Nav */
+.nav-links {
+  display: flex;
+  gap: 5px;
+  /* Espace entre les boutons */
+}
+
+.wedding-nav {
+  /* On augmente l'épaisseur à 2px ou 3px selon votre préférence */
+  border-bottom: 2px solid #dbd0ba !important; 
+  /* On s'assure que l'ombre de Vuetify ne cache pas la ligne */
+  box-shadow: none !important;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #4a4a4a;
+  padding: 8px 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+/* Le fameux rectangle rose de la maquette */
+.router-link-active {
+  background-color: #f2d7d7 !important;
+  /* Rose poudré */
+  color: #000;
+  border-radius: 4px;
 }
