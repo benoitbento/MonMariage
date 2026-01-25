@@ -1,5 +1,6 @@
 <template>
 <v-container>
+<WeddingCard>
         <h1>DressCode</h1>
         Afin de mettre subtilement à l'honneur notre lien commun avec le karaté, nous avons associé chaque couleur de ceinture à une durée de couple. Portez un accessoire de la couleur qui correspond à votre situation sentimentale ! 
 
@@ -36,12 +37,17 @@ Exemples d’accessoires :
 - bijoux 
 
 - chaussettes 
+</WeddingCard>
     </v-container></template>
 
 
 <script>
+import WeddingCard from '@/components/WeddingCard.vue';
+
 export default {
-    name: 'DressCode'
+    name: 'DressCode',
+    components: {WeddingCard
+    }
   }
 
 </script>
