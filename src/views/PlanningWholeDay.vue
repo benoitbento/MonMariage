@@ -13,6 +13,9 @@ Vin d’honneur & repas
 Le dimanche :  
 
 Brunch  
+
+
+Les chiens sont interdits à l’Abbaye de Fontdouce. 
     </v-container></template>
 
 

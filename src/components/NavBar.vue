@@ -14,7 +14,7 @@
       <v-btn variant="text" to="/DressCode">Dress code</v-btn>
       <v-btn variant="text" to="/PlanningWholeDay">Planning</v-btn>
       <v-btn variant="text" to="/BookingAround">Où séjourner</v-btn>
-      <v-btn variant="text" to="/AdressesWedding">Adresses</v-btn>^
+      <v-btn variant="text" to="/AdressesWedding">Adresses</v-btn>
     </div>
 
   </v-app-bar>
@@ -25,5 +25,14 @@
 </script>
 
 <style scoped>
-
+/* On force le titre à se comporter comme un flexbox */
+:deep(.v-toolbar-title__placeholder) {
+  display: flex;
+  align-items: center;
+}
+.rings-icon {
+  /* On s'assure que le SVG est bien centré verticalement */
+  display: inline-block;
+  vertical-align: middle;
+}
 </style>
