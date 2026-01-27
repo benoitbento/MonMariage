@@ -1,8 +1,7 @@
-<template><v-container>
-    <h1>📍 Le lieu du mariage</h1>
+<template><WeddingCard title ="📍 Le lieu du mariage">
     Vous trouverez, ici, des adresses de lieux où vous pourrez dormir à proximité de l’Abbaye de Fontdouce :
     <AzureMap>Infos pratiques</AzureMap>
-  </v-container>
+  </WeddingCard>
   <v-container>
     Voici la liste des adresses qui vous seront utiles le jour de notre mariage :
 
@@ -17,10 +16,11 @@
 </template>
 <script>
 import AzureMap from '@/components/AzureMap.vue';
+import WeddingCard from '@/components/WeddingCard.vue';
 
 export default {
   name: 'AdressesWedding',
-  components: { AzureMap },
+  components: { AzureMap ,WeddingCard},
   mounted() {
   }
 }

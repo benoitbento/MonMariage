@@ -1,23 +1,21 @@
 <template>
     <v-fade-transition>
-        <v-container class="text-center">
-            <h2>⏳ Le grand jour approche !</h2>
-            <v-row justify="center">
-                <v-col cols="3">
-                    <div class="count">{{ countdown.days }}</div>
-                    <div class="label">Jours</div>
-                </v-col>
-                <v-col cols="3">
-                    <div class="count">{{ countdown.hours }}</div>
-                    <div class="label">Heures</div>
-                </v-col>
-                <v-col cols="3">
-                    <div class="count">{{ countdown.minutes }}</div>
-                    <div class="label">Minutes</div>
-                </v-col>
-                <v-col cols="3">
-                    <div class="count">{{ countdown.seconds }}</div>
-                    <div class="label">Secondes</div>
+        <v-container class="countdown-champetre text-center">
+            <h2 class="script-title title-wrapper">Le grand jour approche !
+                <div class="local-flowers">
+                    <img src="@/assets/flowers-divider.png" class="local-divider-icon" alt="" />
+                </div>
+            </h2>
+
+            <v-row justify="center" class="mt-10">
+                <v-col cols="6" md="3" v-for="(value, unit) in countdownItems" :key="unit">
+                    <div class="wreath-container">
+                        <img src="@/assets/flower-wreath.png" class="wreath-img" alt="" />
+                        <div class="inner-circle">
+                            <div class="count">{{ value }}</div>
+                            <div class="label">{{ unit }}</div>
+                        </div>
+                    </div>
                 </v-col>
             </v-row>
         </v-container>
@@ -25,21 +23,21 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-const expired = ref(false)
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
-const targetDate = new Date('2027-04-24T15:00:00') // 🗓️ Change selon ton jour J
+const targetDate = new Date('2027-04-24T15:00:00')
 const countdown = ref({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 
-function updateCountdown() {
-    const now = new Date()
-    const diff = targetDate - now
+const countdownItems = computed(() => ({
+    'Jours': countdown.value.days,
+    'Heures': countdown.value.hours,
+    'Minutes': countdown.value.minutes,
+    'Secondes': countdown.value.seconds
+}))
 
-    if (diff <= 0) {
-        expired.value = true
-        countdown.value = { days: 0, hours: 0, minutes: 0, seconds: 0 }
-        return
-    }
+function updateCountdown() {
+    const diff = targetDate - new Date()
+    if (diff <= 0) return
 
     countdown.value = {
         days: Math.floor(diff / (1000 * 60 * 60 * 24)),
@@ -54,29 +52,125 @@ onMounted(() => {
     updateCountdown()
     interval = setInterval(updateCountdown, 1000)
 })
-
-onUnmounted(() => {
-    clearInterval(interval)
-})
-
+onUnmounted(() => clearInterval(interval))
 </script>
 
 <style scoped>
+.title-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.local-flowers {
+    position: absolute;
+    top: 50%;
+    /* Centre l'image sur le texte */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    /* Place les fleurs derrière le texte du titre */
+    opacity: 0.6;
+    /* Un peu de transparence pour le côté doux */
+    width: 100%;
+    max-width: 400px;
+}
+
+.local-divider-icon {
+    width: 100%;
+    height: auto;
+}
+
+.countdown-champetre {
+    padding: 4rem 1rem;
+}
+
+.wreath-container {
+    position: relative;
+    width: 200px;
+    /* À ajuster selon tes images */
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.script-title {
+    font-family: 'Great Vibes', cursive;
+    color: #c5a059;
+    /* Le doré de ta référence */
+    font-size: 3.5rem;
+    margin: 0;
+}
+
+.wreath-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;
+    /* Optionnel : petite animation de rotation très lente */
+    animation: soft-rotate 60s linear infinite;
+}
+
+.inner-circle {
+    position: relative;
+    z-index: 2;
+    width: 140px;
+    height: 140px;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    /* Bordure dorée très fine */
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.4);
+    /* Fond léger pour lisibilité */
+}
+
 .count {
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
-    font-weight: bold;
-    color: #d16ba5;
-    /* rose pastel */
+    font-weight: 300;
+    color: #c5a059;
+    line-height: 1;
 }
 
 .label {
-    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     color: #888;
 }
 
-.v-container {
-    background: linear-gradient(to bottom, #fceff9, #fff);
-    padding: 2rem;
-    border-radius: 12px;
+@keyframes soft-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Version Mobile */
+@media (max-width: 600px) {
+    .wreath-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .inner-circle {
+        width: 110px;
+        height: 110px;
+    }
+
+    .count {
+        font-size: 1.8rem;
+    }
 }
 </style>

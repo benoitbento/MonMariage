@@ -1,6 +1,6 @@
 
 <template>
-  <WeddingCard>
+  <WeddingCard title ="Notre histoire">
     <div class="divider">
       <img src="@/assets/flowers-divider.png" class="divider-icon" alt="" />
     </div>
