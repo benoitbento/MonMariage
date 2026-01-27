@@ -1,9 +1,11 @@
-<template><v-container>
-        <h1>Confirmez votre présence</h1>
-    </v-container></template>
+<template><wedding-card title="Confirmez votre présence">
+    </wedding-card></template>
 <script>
+import WeddingCard from '@/components/WeddingCard.vue';
+
 export default {
-    name: 'BookingAround'
+    name: 'BookingAround',
+    components: { WeddingCard }
   }
 
 </script>

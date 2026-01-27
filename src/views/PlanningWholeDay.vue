@@ -1,5 +1,7 @@
-<template><v-container>
-        <h1>Planning</h1>
+<template>
+<WeddingCard title ="Planning">
+
+
         Le samedi :  
 
 Cérémonie civile 
@@ -16,12 +18,18 @@ Brunch
 
 
 Les chiens sont interdits à l’Abbaye de Fontdouce. 
-    </v-container></template>
+   </WeddingCard>
+   </template>
 
 
 <script>
+import WeddingCard from '@/components/WeddingCard.vue';
+
+
 export default {
-    name: 'PlanningWholeDay'
+    name: 'PlanningWholeDay',
+    components: {WeddingCard
+    }
   }
 
 </script>

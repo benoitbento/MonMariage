@@ -8,7 +8,7 @@
       <div class="wedding-card-main">
       <header class="floral-header ">
         <div class="title-container ">
-          <h1 class="script-title">Notre histoire</h1>
+          <h1 class="script-title">{{ title }}</h1>
         </div>
       </header>
       
@@ -19,6 +19,21 @@
     </div>
   </div>
 </template>
+
+
+<script>
+export default {
+  name: 'WeddingCard',
+  props: {
+    // Définition du paramètre "title"
+    title: {
+      type: String,
+      default: 'Notre Mariage' // Titre par défaut si rien n'est envoyé
+    }
+  }
+}
+</script>
+
 <style scoped>
 
 

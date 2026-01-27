@@ -1,9 +1,9 @@
 <template>
       <CountDown/>
 
-<v-container>
+<!-- <v-container>
         <h1>Bienvenue à notre mariage 💍</h1>
-    </v-container>
+    </v-container> -->
     </template>
 
 <script>
