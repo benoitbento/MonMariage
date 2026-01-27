@@ -1,15 +1,18 @@
 
 <template>
   <WeddingCard>
+    <div class="divider">
+      <img src="@/assets/flowers-divider.png" class="divider-icon" alt="" />
+    </div>
     <section class="history">
       <div class="history__container">
 
         <p class="history__text">Nous nous sommes rencontrés à Bordeaux, en 2019, au karaté. Benoît a été sonné par le
           mawashi-geri (coup de pieds circulaire) d’Elyne tandis qu’Elyne a été charmée par l’humour de Benoît, comme
-          quoi, même dans un temple de la violence, le coup de foudre est à porter de pied.</p>
+          quoi, même dans un temple de la violence, le coup de foudre est à portée de pied.</p>
 
         <p class="history__text">Malheureusement, nous étions en 2020, autant vous rappeler que les relations sociales
-          ont été quelque peu freinées à cause d’un pengolin. Notre premier rendez-vous a donc eu lieu à la sortie du
+          ont été quelque peu freinées à cause d’un pangolin. Notre premier rendez-vous a donc eu lieu à la sortie du
           premier confinement en mai 2020 : Benoît avait préparé un succulent repas puis programmé le film Le silence
           des agneaux (il avait tout compris...).</p>
 
@@ -55,12 +58,13 @@
 
 .divider-icon{
   display: block;
-  margin: 2rem auto;
-  max-width: 300px; /* ajuste selon ton design */
+  margin: 1.5rem auto; /* Un peu moins d'espace en haut/bas */
+  width: 100%;          /* Utilise la largeur disponible... */
+  max-width: 180px;    /* ...mais s'arrête à 180px (ajuste ici pour la taille) */
   height: auto;
-  opacity: 0.8; /* optionnel pour un effet doux */
+  opacity: 0.6;        /* Légèrement plus visible que 0.4 pour voir les détails */
+  filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.05)); /* Optionnel : donne un peu de relief */
 }
-
   .photo-section {
   display: flex;
   justify-content: center;
@@ -154,9 +158,21 @@
   object-fit: cover;
 }
 
-.history__text{
+.history__text {
   margin-bottom: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300; /* Plus fin pour plus d'élégance */
+  line-height: 1.8;
+  color: #555;
+  text-align: center; /* Souvent plus joli pour les faire-part */
 }
+
+/* Optionnel : mettre en gras les lieux ou dates clés */
+.history__text strong {
+  color: #c5a059; /* Rappel du doré */
+  font-weight: 500;
+}
+
 </style>
 <script>
 // import PageContainer from '@/components/Container.vue'
