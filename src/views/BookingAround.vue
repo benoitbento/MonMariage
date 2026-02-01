@@ -57,7 +57,7 @@ export default {
 
       // --- Appel API Azure Maps : hébergements ---
       const radius = 15000; // 15 km autour de l'Abbaye
-      const url = `https://atlas.microsoft.com/search/poi/category/json?api-version=1.0&subscription-key=${mapKey}&lon=${abbayeCoords[0]}&lat=${abbayeCoords[1]}&radius=${radius}&categorySet=7311,7313,7314&query=chambre%20d'hôtes|hôtel|gîte|auberge`;
+      const url = `https://atlas.microsoft.com/search/poi/category/json?api-version=1.0&subscription-key=${mapKey}&lon=${abbayeCoords[0]}&lat=${abbayeCoords[1]}&radius=${radius}&categorySet=7311,7312,7313,7314,7315&query=chambre%20d'hôtes|hôtel|gîte|auberge|dormir|`;
 
       const response = await fetch(url);
       const data = await response.json();
@@ -98,16 +98,6 @@ resultsArray.forEach((poi) => {
     console.warn('Coordonnées invalides pour ce POI', poi);
     return;
   }
-};
-</script>
-
-<style scoped>
-#azureMap {
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  overflow: hidden;
-  border: 1px solid #f0e6d2;
-}
 
   // Création du marqueur et du popup (comme avant)
   const marker = new atlas.HtmlMarker({
