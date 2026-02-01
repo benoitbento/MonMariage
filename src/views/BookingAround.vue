@@ -98,6 +98,16 @@ resultsArray.forEach((poi) => {
     console.warn('Coordonnées invalides pour ce POI', poi);
     return;
   }
+};
+</script>
+
+<style scoped>
+#azureMap {
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border: 1px solid #f0e6d2;
+}
 
   // Création du marqueur et du popup (comme avant)
   const marker = new atlas.HtmlMarker({
