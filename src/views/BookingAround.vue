@@ -1,5 +1,5 @@
 <template>
-<WeddingCard title="Où séjourner">
+<WeddingCard title="Où séjourner?">
     Vous trouverez, ici, des adresses de lieux où vous pourrez dormir à proximité de l’Abbaye de Fontdouce :
 <v-container>
     <div id="azureMap" style="width: 100%; height: 400px;"></div>
@@ -57,7 +57,7 @@ export default {
 
       // --- Appel API Azure Maps : hébergements ---
       const radius = 15000; // 15 km autour de l'Abbaye
-      const url = `https://atlas.microsoft.com/search/poi/category/json?api-version=1.0&subscription-key=${mapKey}&lon=${abbayeCoords[0]}&lat=${abbayeCoords[1]}&radius=${radius}&categorySet=7311,7312,7313,7314,7315&query=chambre%20d'hôtes|hôtel|gîte|auberge|dormir|`;
+      const url = `https://atlas.microsoft.com/search/poi/category/json?api-version=1.0&subscription-key=${mapKey}&lon=${abbayeCoords[0]}&lat=${abbayeCoords[1]}&radius=${radius}&categorySet=7311,7312,7313,7314,7315,7316&query=chambre%20d'hôtes|hôtel|gîte|auberge|dormir|chambre|guest|house`;
 
       const response = await fetch(url);
       const data = await response.json();
