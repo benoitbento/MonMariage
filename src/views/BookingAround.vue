@@ -57,7 +57,7 @@ export default {
 
       // --- Appel API Azure Maps : hébergements ---
       const radius = 15000; // 15 km autour de l'Abbaye
-      const url = `https://atlas.microsoft.com/search/poi/category/json?api-version=1.0&subscription-key=${mapKey}&lon=${abbayeCoords[0]}&lat=${abbayeCoords[1]}&radius=${radius}&categorySet=7311,7313,7314&query=chambre%20d'hôtes|hôtel|gîte|auberge`;
+      const url = `https://atlas.microsoft.com/search/poi/category/json?api-version=1.0&subscription-key=${mapKey}&lon=${abbayeCoords[0]}&lat=${abbayeCoords[1]}&radius=${radius}&categorySet=7311,7312,7313,7314,7315&query=chambre%20d'hôtes|hôtel|gîte|auberge|dormir|`;
 
       const response = await fetch(url);
       const data = await response.json();
