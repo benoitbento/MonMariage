@@ -1,12 +1,14 @@
 <template>
   <nav>
     <v-app-bar class="wedding-nav" flat color="white" height="70">
-      <v-toolbar-title class="d-flex align-center ml-8">
-        <span class="wedding-logo">Notre Mariage</span>
-        <svg class="rings-icon ml-3" width="36" height="24" viewBox="0 0 100 60">
+      <v-toolbar-title class="ml-2 ml-sm-8">
+        <div class="d-flex align-center">
+        <span class="wedding-logo text-no-wrap">Notre Mariage</span>
+        <svg class="rings-icon ml-2" width="30" height="20" viewBox="0 0 100 60">
           <circle cx="35" cy="30" r="26" fill="none" stroke="#D4AF37" stroke-width="4" />
           <circle cx="65" cy="30" r="26" fill="none" stroke="#D4AF37" stroke-width="4" />
         </svg>
+      </div>
       </v-toolbar-title>
       <v-spacer />
       <div class="nav-items d-none d-md-flex align-center mr-4">
@@ -41,6 +43,23 @@ const drawer = ref(false)
 </script>
 
 <style scoped>
+/* Correction pour l'icône sur mobile */
+@media (max-width: 400px) {
+  .rings-icon {
+    width: 24px; /* On réduit un peu plus pour les tout petits écrans */
+    margin-left: 4px !important;
+  }
+  .wedding-logo {
+    font-size: 1rem;
+  }
+}
+/* Sur écrans moyens et larges (Tablettes/PC) */
+@media (min-width: 600px) {
+  .wedding-logo {
+    font-size: 1.5rem;
+  }
+}
+
 :deep(.v-app-bar-nav-icon) {
   background: rgba(212, 175, 55, 0.12);
   border: 1.5px solid #d4af37;
@@ -50,9 +69,15 @@ const drawer = ref(false)
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-:deep(.v-app-bar-nav-icon:hover) {
-  background: rgba(212, 175, 55, 0.22);
-  box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+/* Empêche le titre de se faire couper ou d'être trop large */
+.v-toolbar-title {
+  flex: 1;
+  min-width: 0; /* Important pour flexbox sur mobile */
+}
+
+.wedding-logo {
+  font-size: 1.1rem; /* Taille de base mobile */
+  white-space: nowrap;
 }
 @keyframes softPulse {
   0% {
