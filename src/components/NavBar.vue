@@ -3,7 +3,7 @@
     <v-app-bar class="wedding-nav" flat color="white" height="70">
       <v-toolbar-title class="ml-2 ml-sm-8">
         <div class="d-flex align-center">
-        <span class="wedding-logo text-no-wrap">Notre Mariage</span>
+        <span class="wedding-logo text-no-wrap ">Notre Mariage</span>
         <svg class="rings-icon ml-2" width="30" height="20" viewBox="0 0 100 60">
           <circle cx="35" cy="30" r="26" fill="none" stroke="#D4AF37" stroke-width="4" />
           <circle cx="65" cy="30" r="26" fill="none" stroke="#D4AF37" stroke-width="4" />
@@ -43,14 +43,20 @@ const drawer = ref(false)
 </script>
 
 <style scoped>
+/* Dans ton CSS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
 /* Correction pour l'icône sur mobile */
 @media (max-width: 400px) {
   .rings-icon {
-    width: 24px; /* On réduit un peu plus pour les tout petits écrans */
+    width: 22px; /* On réduit la taille des bagues */
+    height: 14px;
     margin-left: 4px !important;
   }
   .wedding-logo {
-    font-size: 1rem;
+    font-size: 0.95rem; /* Réduction légère du texte pour laisser de la place aux bagues */
+  }
+  .ml-2 {
+    margin-left: 4px !important;
   }
 }
 /* Sur écrans moyens et larges (Tablettes/PC) */
@@ -58,39 +64,48 @@ const drawer = ref(false)
   .wedding-logo {
     font-size: 1.5rem;
   }
+  .rings-icon {
+    width: 30px;
+    height: 20px;
+  }
 }
 
 :deep(.v-app-bar-nav-icon) {
+  animation: softPulse 2.5s ease-in-out infinite;
+  border-radius: 50%;
   background: rgba(212, 175, 55, 0.12);
   border: 1.5px solid #d4af37;
-  border-radius: 50%;
-  padding: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  /* transition: background 0.3s ease, box-shadow 0.3s ease; 
+  
+  background: rgba(212, 175, 55, 0.12);
+  */
 }
 
 /* Empêche le titre de se faire couper ou d'être trop large */
 .v-toolbar-title {
-  flex: 1;
+  flex: 0 1 auto !important;
   min-width: 0; /* Important pour flexbox sur mobile */
+  padding-right: 8px;
 }
+
+.d-flex.align-center {
+  max-width: 100%;
+}
+
 
 .wedding-logo {
-  font-size: 1.1rem; /* Taille de base mobile */
+font-family: 'Montserrat', sans-serif !important;
+  font-size: 1.1rem;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Si vraiment trop long, on coupe proprement le texte */
 }
+
 @keyframes softPulse {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.06);
-  }
-
-  100% {
-    transform: scale(1);
-  }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
 }
 
 :deep(.v-app-bar-nav-icon) {
@@ -104,11 +119,11 @@ const drawer = ref(false)
 :deep(.v-toolbar-title__placeholder) {
   display: flex;
   align-items: center;
+  overflow: visible !important; /* Permet aux bagues de ne pas être rognées par Vuetify */
 }
 
 .rings-icon {
-  /* On s'assure que le SVG est bien centré verticalement */
-  display: inline-block;
-  vertical-align: middle;
+  flex-shrink: 0; /* EMPECHE LES BAGUES DE SE COUPER */
+  display: block;
 }
 </style>

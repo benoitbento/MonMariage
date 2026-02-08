@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&display=swap');
-
+/* Dans ton CSS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
 /* Global variables and container styles */
 :root{
   --wedding-gold: #c5a059;
