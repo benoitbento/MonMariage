@@ -25,7 +25,7 @@ export default {
 
     const map = new atlas.Map('azureMap', {
       center: abbayeCoords,
-      zoom: 12,
+      zoom: 11,
       style: 'grayscale_light', // Change 'main' par un style plus doux
       language: 'fr-FR',
       authOptions: {
