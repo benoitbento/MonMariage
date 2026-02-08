@@ -61,9 +61,8 @@ export default {
 
 <style scoped>
 .planning-container {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 20px 0;
 }
 
 .day-title {
@@ -71,28 +70,41 @@ export default {
   color: #c5a059;
   font-size: 2.2rem;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .timeline {
   position: relative;
-  border-left: 2px solid #f0e6d2;
-  /* Ligne de la timeline */
-  margin-left: 50px;
-  padding-left: 30px;
+  margin: 40px auto; /* Centre le conteneur */
+  width: 100%;
+  max-width: 400px; /* Limite la largeur pour que ça reste élégant */
+}
+
+/* On crée la ligne verticale pile au milieu */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30%; /* La ligne sera à 30% de la largeur du bloc */
+  width: 1.5px;
+  background-color: #f0e6d2;
 }
 
 .event-item {
   position: relative;
-  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 35px;
+  width: 100%;
 }
 
-/* Le point sur la ligne */
-.event-item::before {
+/* Le point doré centré sur la ligne */
+.event-item::after {
   content: '';
   position: absolute;
-  left: -41px;
-  top: 5px;
+  left: calc(30% - 10px); /* 10px = moitié de la largeur du point */
+  top: 4px;
   width: 20px;
   height: 20px;
   background: white;
@@ -102,27 +114,47 @@ export default {
 }
 
 .time {
-  position: absolute;
-  left: -110px;
-  top: 5px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
+  /* On force l'heure à prendre l'espace à gauche de la ligne */
+  width: 30%; 
+  text-align: right;
+  padding-right: 25px;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600;
   color: #c5a059;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  margin-top: 6px;
 }
 
+.event-details {
+  /* Le texte prend tout le reste à droite */
+  width: 70%;
+  padding-left: 25px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* Ajustement pour le titre du jour pour qu'il s'aligne visuellement */
+.day-title {
+  /* On ajoute une petite marge pour compenser le décalage de la timeline */
+  padding-right: 0; 
+  text-align: center;
+}
 .event-details h4 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   margin: 0;
-  color: #444;
+  color: #333;
+  font-size: 0.95rem;
 }
 
 .event-details p {
-  margin: 5px 0 0;
-  color: #777;
-  font-style: italic;
+  font-family: 'Montserrat', sans-serif !important;
+  margin: 4px 0 0;
+  color: #666;
+  font-size: 0.9rem;
 }
 
 /* Style spécifique pour la note d'avertissement (les chiens) */
@@ -139,4 +171,5 @@ export default {
 .mt-8 {
   margin-top: 50px;
 }
+
 </style>
