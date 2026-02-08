@@ -138,12 +138,17 @@ export default {
   margin-bottom: 10px;
 }
 
+
+
 .content {
   font-family: 'Montserrat', sans-serif;
-  line-height: 1.8;
-  color: var(--wedding-text);
+  line-height: 1.7; /* Espace entre les lignes pour respirer */
+  color: #4a4a4a;   /* Un gris très foncé plutôt que noir pur, plus doux */
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1rem;  /* Taille standard lisible */
+  font-weight: 400; /* Assure-toi de ne pas être en 200 ou 300 (trop fin) */
+  max-width: 90%;   /* Empêche le texte de coller aux bords internes */
+  margin: 0 auto;
 }
 
 .wedding-card {
@@ -162,15 +167,36 @@ export default {
   margin: 50px auto;
 }
 
-
-/* La carte blanche avec l'ombre portée douce */
 .wedding-card-main {
   position: relative;
   background: #ffffff;
   border-radius: 30px;
-  padding: 80px 60px;
-  z-index: 1; /* Derrière les fleurs */
+  padding: 60px 30px; 
+  z-index: 1;
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  box-sizing: border-box; /* Indispensable pour que le padding ne "gonfle" pas la carte */
+}
+
+/* Ajustement pour les petits écrans */
+@media (max-width: 600px) {
+  .wedding-card-main {
+    padding: 50px 20px; /* On réduit les marges internes sur mobile */
+    border-radius: 20px;
+  }
+  
+  .script-title {
+    font-size: 2.5rem; /* Titre plus petit pour éviter de casser sur 2 lignes */
+  }
+
+  .top-left { top: -10px; left: -10px; }
+  .top-right { top: -10px; right: -10px; }
+  
+  .corner-flower {
+    width: 120px; /* Fleurs plus petites pour ne pas manger tout le texte */
+    opacity: 0.6;
+
+  }
 }
 
 .floral-icon {
