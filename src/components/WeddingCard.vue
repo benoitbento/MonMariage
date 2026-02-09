@@ -70,57 +70,17 @@ export default {
   opacity: 0.9;
 }
 /* Positionnement précis dans chaque coin */
-.top-left {
-  top: 0;
-  left: 0;
-}
-
-.top-right {
-  top: 0;
-  right: 0;
-  /*transform: scaleX(-1); /* Retourne l'image horizontalement si c'est la même */
-}
-
-.bottom-left {
-  bottom: 0;
-  left: 0;
-  /*transform: scaleY(-1); /* Retourne l'image verticalement */
-}
-
-.bottom-right {
-  bottom: 0;
-  right: 0;
-  /*transform: rotate(180deg); /* Rotation complète */
-}
+.top-left { top: -15px; left: -20px; }
+  .top-right { top: -15px; right: -20px; }
+  .bottom-left { bottom: -19px; left: -23px; }
+  .bottom-right { bottom: -15px; right: -20px; }
 
 .history__container {
   position: relative;
   z-index: 2; /* Force le texte à rester au-dessus du niveau des fleurs */
 }
-/* 2. Style commun pour les fleurs latérales */
-.side-flower {
-  position: absolute;
-  height: 100%;       /* Prend toute la hauteur du texte */
-  width: auto;         /* Garde le ratio de l'image */
-  max-width: 150px;    /* Ajuste la largeur des fleurs selon ton goût */
-  object-fit: cover;   /* Important : l'image remplit la hauteur sans se déformer */
-  pointer-events: none; /* Le texte reste sélectionnable en dessous */
-  z-index: 1;
-  opacity: 0.8;
-}
 
-/* 3. Positionnement spécifique gauche/droite */
-.side-flower--left {
-  top: 0;
-  left: -40px; /* Fait déborder légèrement à gauche */
-  object-position: left; /* Aligne le visuel sur le bord gauche */
-}
 
-.side-flower--right {
-  top: 0;
-  right: -40px; /* Fait déborder légèrement à droite */
-  object-position: right; /* Aligne le visuel sur le bord droit */
-}
 
 /* 4. On remonte le contenu pour qu'il soit au-dessus des fleurs si besoin */
 .content, .floral-header {
@@ -151,6 +111,7 @@ export default {
   position: relative; /* Indispensable pour positionner les fleurs */
   background: white;
   /* padding: 60px; */
+  overflow: hidden;
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.07); 
   
   /* Optionnel : une deuxième ombre très fine pour plus de profondeur */
@@ -171,6 +132,33 @@ export default {
   padding: 80px 60px;
   z-index: 1; /* Derrière les fleurs */
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+<<<<<<< Updated upstream
+=======
+  width: 100%;
+  box-sizing: border-box; /* Indispensable pour que le padding ne "gonfle" pas la carte */
+}
+
+/* Ajustement pour les petits écrans */
+@media (max-width: 600px) {
+  .wedding-card-main {
+    padding: 50px 20px; /* On réduit les marges internes sur mobile */
+    border-radius: 20px;
+  }
+  
+  .script-title {
+    font-size: 2.5rem; /* Titre plus petit pour éviter de casser sur 2 lignes */
+  }
+
+  .top-left { top: -10px; left: -10px; }
+  .top-right { top: -10px; right: -10px; }
+  .bottom-left { bottom: -10px; left: -10px; }
+  .bottom-right { bottom: -10px; right: -10px; }
+  .corner-flower {
+    width: 120px; /* Fleurs plus petites pour ne pas manger tout le texte */
+    opacity: 0.6;
+
+  }
+>>>>>>> Stashed changes
 }
 
 .floral-icon {
