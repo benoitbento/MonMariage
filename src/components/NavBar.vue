@@ -126,4 +126,14 @@ font-family: 'Montserrat', sans-serif !important;
   flex-shrink: 0; /* EMPECHE LES BAGUES DE SE COUPER */
   display: block;
 }
+
+:deep(.v-btn--active) {
+  color: white !important;
+  border-radius: 8px !important;
+}
+
+/* On s'assure que le contenu du bouton (texte) hérite bien du blanc */
+:deep(.v-btn--active .v-btn__content) {
+  color: white !important;
+}
 </style>
