@@ -2,13 +2,10 @@
   <WeddingCard title="Où séjourner?">
     Vous trouverez, ici, des adresses de lieux où vous pourrez dormir à proximité de l’Abbaye de Fontdouce :
     <v-container fluid class="pa-0 mt-4">
-    <div id="azureMap" class="wedding-map"></div>
-</v-container>
-    <!-- <v-container>
-      <div id="azureMap" style="width: 100%; height: 400px;"></div>
-    </v-container> -->
-
-
+      <div class="map-wrapper">
+        <div id="azureMap" class="wedding-map"></div>
+      </div>
+    </v-container>
   </WeddingCard>
 </template>
 <script>
@@ -34,18 +31,18 @@ export default {
       },
       dragPanInteraction: {
         freeForm: false // Empêche la carte de capturer le scroll vertical trop facilement
-    }
+      }
     });
 
     map.events.add('ready', async () => {
 
       // --- Marqueur principal (Abbaye) ---
       const abbayeMarker = new atlas.HtmlMarker({
-  position: abbayeCoords,
-  // On utilise une div avec une classe pour le CSS
-  htmlContent: '<div class="pin-wedding">💍</div>', 
-  pixelOffset: [0, -15]
-});
+        position: abbayeCoords,
+        // On utilise une div avec une classe pour le CSS
+        htmlContent: '<div class="pin-wedding">💍</div>',
+        pixelOffset: [0, -15]
+      });
       map.markers.add(abbayeMarker);
 
       const abbayePopup = new atlas.Popup({
@@ -110,31 +107,31 @@ export default {
 
         // Création du marqueur et du popup (comme avant)
         const marker = new atlas.HtmlMarker({
-    position: [lon, lat],
-    // On utilise une icône Material Design ou un simple SVG de maison
-    htmlContent: `
+          position: [lon, lat],
+          // On utilise une icône Material Design ou un simple SVG de maison
+          htmlContent: `
       <div class="pin-hotel">
         <svg viewBox="0 0 24 24" width="20" height="20">
           <path fill="currentColor" d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
         </svg>
       </div>`,
-    anchor: 'center'
-  });
+          anchor: 'center'
+        });
         map.markers.add(marker);
 
         const address = poi.address?.freeformAddress || poi.address || '';
         const popup = new atlas.Popup({
-         content: `
+          content: `
       <div class="custom-popup">
         <h4>🏨 ${poi.poi?.name || 'Hébergement'}</h4>
         <p>${address}</p>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}" 
+        <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}"
            target="_blank" class="gps-button">
            Y ALLER (GPS)
         </a>
       </div>`,
-    position: [lon, lat],
-    pixelOffset: [0, -20]
+          position: [lon, lat],
+          pixelOffset: [0, -20]
         });
 
         map.events.add('click', marker, () => popup.open(map));
@@ -148,11 +145,9 @@ export default {
 <style scoped>
 #azureMap {
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  overflow: hidden;
-  border: 1px solid #f0e6d2;
+
   /* Filtre optionnel pour adoucir encore plus les couleurs de la map */
-  filter: sepia(20%) brightness(105%); 
+  filter: sepia(20%) brightness(105%);
 }
 
 :deep(.custom-popup) {
@@ -164,7 +159,7 @@ export default {
 /* Style du marqueur Alliance (Abbaye) */
 :deep(.pin-wedding) {
   font-size: 30px;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -177,11 +172,10 @@ export default {
   width: 28px;
   height: 28px;
   background-color: white;
-  color: #c5a059; /* Ton doré */
+  color: #c5a059;
   border-radius: 50%;
   border: 2px solid #c5a059;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-  cursor: pointer;
+  box-shadow: none; /* 👈 plus d’ombre */  filter: none;  cursor: pointer;
   transition: all 0.3s ease;
 }
 
@@ -190,14 +184,21 @@ export default {
   height: 16px;
 }
 
-.wedding-map {
-  width: 94%; /* On augmente la largeur par rapport au texte */
-  height: 400px; /* Garde une bonne hauteur pour le confort */
-  margin: 0 auto; /* Centre la map */
+.map-wrapper {
+  width: 94%;
+  margin: 0 auto;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  /* box-shadow: 0 8px 25px rgba(0,0,0,0.15); Ombre uniforme */
   border: 1px solid #f0e6d2;
-  overflow: hidden;
+  overflow: visible; /* important */
+}
+
+.wedding-map {
+  width: 100%;
+  height: 400px;
+  border-radius: 15px;
+  overflow: hidden; /* OK ici */
+  filter: sepia(20%) brightness(105%);
 }
 
 /* Sur écrans plus larges (Tablettes/PC) */
@@ -215,16 +216,18 @@ export default {
   color: white;
 }
 
-/* Nettoyage des popups Azure (plus minimaliste) */
-:deep(.atlas-popup-content) {
-  font-family: 'Montserrat', sans-serif !important;
-  padding: 15px !important;
+/* Supprime l'ombre de la bulle (le conteneur principal) */
+:deep(.atlas-popup-container) {
+  box-shadow: none !important;
+  filter: none !important;
 }
 
-:deep(.atlas-popup-container) {
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
-  border-radius: 10px !important;
+/* Supprime aussi l'ombre sur la petite flèche (le bec) sous la popup */
+:deep(.atlas-popup-pointer) {
+  box-shadow: none !important;
+  filter: none !important;
 }
+
 
 :deep(.custom-popup h4) {
   margin: 0 0 5px 0;
