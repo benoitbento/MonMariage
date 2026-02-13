@@ -12,6 +12,10 @@ export default {
 
   mounted() {
     const mapKey = process.env.VUE_APP_AZURE_MAPS_KEY;
+    if (!mapKey) {
+      console.error('Azure Maps key is not configured (VUE_APP_AZURE_MAPS_KEY)');
+      return;
+    }
 
     const locations = {
       abbaye: [-0.455199, 45.76992],
