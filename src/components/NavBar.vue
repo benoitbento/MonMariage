@@ -39,13 +39,12 @@
 import { ref } from 'vue'
 
 const drawer = ref(false)
-// Pas besoin de script si tu n’as pas de logique dynamique
+  
 </script>
 
 <style scoped>
 /* Dans ton CSS */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
-/* Correction pour l'icône sur mobile */
 @media (max-width: 400px) {
   .rings-icon {
     width: 22px; /* On réduit la taille des bagues */
@@ -59,7 +58,6 @@ const drawer = ref(false)
     margin-left: 4px !important;
   }
 }
-/* Sur écrans moyens et larges (Tablettes/PC) */
 @media (min-width: 600px) {
   .wedding-logo {
     font-size: 1.5rem;
@@ -76,10 +74,7 @@ const drawer = ref(false)
   background: rgba(212, 175, 55, 0.12);
   border: 1.5px solid #d4af37;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  /* transition: background 0.3s ease, box-shadow 0.3s ease; 
   
-  background: rgba(212, 175, 55, 0.12);
-  */
 }
 
 /* Empêche le titre de se faire couper ou d'être trop large */

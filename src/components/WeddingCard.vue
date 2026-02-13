@@ -25,10 +25,9 @@
 export default {
   name: 'WeddingCard',
   props: {
-    // Définition du paramètre "title"
     title: {
       type: String,
-      default: 'Notre Mariage' // Titre par défaut si rien n'est envoyé
+      default: 'Notre Mariage'
     }
   }
 }
@@ -37,14 +36,13 @@ export default {
 <style scoped>
 
 
-/* Le wrapper qui gère la position relative sans couper les débordements */
 .paper-card-wrapper {
   position: relative;
   width: 100%;
   max-width: 800px;
 }
 .wedding-container {
-  background-color: #fdfbf7; /* Ton fond crème */
+  background-color: #fdfbf7;
   padding: 60px 20px;
   min-height: 100vh;
   display: flex;
@@ -55,7 +53,7 @@ export default {
 
 
 .paper-card {
-  position: relative; /* Référence pour les fleurs en absolute */
+  position: relative;
   max-width: 800px;
   width: 100%;
   padding: 60px 80px; /* Augmentez les 80px si les fleurs sont larges */
@@ -82,7 +80,6 @@ export default {
 
 
 
-/* 4. On remonte le contenu pour qu'il soit au-dessus des fleurs si besoin */
 .content, .floral-header {
   position: relative;
   z-index: 4;
@@ -106,13 +103,11 @@ export default {
   color: #4a4a4a;   /* Un gris très foncé plutôt que noir pur, plus doux */
   text-align: center;
   font-size: 1rem;  /* Taille standard lisible */
-  font-weight: 400; /* Assure-toi de ne pas être en 200 ou 300 (trop fin) */
   max-width: 90%;   /* Empêche le texte de coller aux bords internes */
   margin: 0 auto;
 }
 
 .wedding-card {
-  /* ... tes styles précédents ... */
   position: relative; /* Indispensable pour positionner les fleurs */
   background: white;
   /* padding: 60px; */
