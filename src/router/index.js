@@ -16,7 +16,7 @@ const routes = [
   { path: '/BookingAround', component: BookingAround },
   { path: '/AdressesWedding', component: AdressesWedding },
 ]
-
+//test
 const router = createRouter({
   history: createWebHistory(),
   routes,
