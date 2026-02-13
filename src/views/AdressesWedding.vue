@@ -1,4 +1,4 @@
-<template><WeddingCard title ="📍 Le lieu du mariage">
+<template><WeddingCard title ="Le lieu du mariage">
     <AzureMap></AzureMap>
   </WeddingCard>
 </template>
