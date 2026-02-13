@@ -108,7 +108,6 @@ const egliseCoords = [ -0.6193, 45.6680 ];
   mappy.markers.add(egliseMarker);
   mappy.events.add('click', egliseMarker, () => eglisePopup.open(mappy));
 
-  // --- Salle polyvalente (parking) ---
   const salleCoords = [ -0.6192393, 45.6695985 ];
   const salleMarker = new atlas.HtmlMarker({
     position: salleCoords,
@@ -219,7 +218,6 @@ const egliseCoords = [ -0.6193, 45.6680 ];
   color: white;
 }
 
-/* Supprime les ombres des popups */
 :deep(.atlas-popup-container) {
   box-shadow: none !important;
   filter: none !important;
@@ -231,6 +229,6 @@ const egliseCoords = [ -0.6193, 45.6680 ];
 }
 
 :deep(.azure-maps-html-marker) {
-    cursor: pointer;
+  cursor: pointer;
 }
 </style>

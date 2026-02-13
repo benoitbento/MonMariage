@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-// Pages
 import HomeView from '@/views/HomeView.vue'
 import CommonHistory from '@/views/CommonHistory.vue'
 import AdressesWedding from '@/views/AdressesWedding.vue'
@@ -22,7 +21,6 @@ const router = createRouter({
   routes
 })
 
-// Met à jour le titre de l'onglet avec le titre de la route actuelle
 const baseTitle = document.title || 'Mariage'
 router.afterEach((to) => {
   const title = to.meta && to.meta.title ? `${to.meta.title}` : baseTitle
