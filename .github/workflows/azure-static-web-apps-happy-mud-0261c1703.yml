@@ -35,7 +35,6 @@ jobs:
           output_location: "dist"
         env: # Déplacez le bloc 'env' APRES le bloc 'with'
           VUE_APP_AZURE_MAPS_KEY: ${{ secrets.VUE_APP_AZURE_MAPS_KEY }}
-          VUE_APP_API_KEY: ${{ secrets.VUE_APP_API_KEY }}
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
