@@ -13,7 +13,7 @@ import * as atlas from 'azure-maps-control';
 import WeddingCard from '@/components/WeddingCard.vue';
 import 'azure-maps-control/dist/atlas.min.css';
 import { useHead } from '@unhead/vue';
-import { defineComponent, onMounted } from 'vue';
+import { onMounted } from 'vue';
 
 useHead({
   title: 'Où séjourner? - Notre Mariage',
@@ -22,11 +22,6 @@ useHead({
   ]
 });
 
-defineComponent({
-  name: 'BookingAround',
-  components: { WeddingCard },
-
-});
 onMounted(async () => {
   const abbayeCoords = [-0.455199, 45.76992];
   const mapKey = process.env.VUE_APP_AZURE_MAPS_KEY;

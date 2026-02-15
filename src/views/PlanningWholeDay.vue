@@ -39,7 +39,6 @@
 <script setup>
 import WeddingCard from '@/components/WeddingCard.vue';
 import { useHead } from '@unhead/vue';
-import { defineComponent } from 'vue';
 
 useHead({
   title: 'Planning - Notre Mariage',
@@ -48,12 +47,6 @@ useHead({
   ]
 });
 
-defineComponent({
-  name: 'PlanningWholeDay',
-  components: {
-    WeddingCard
-  },
-});
  const saturdayEvents =[
         { time: '14h00', title: 'Cérémonie civile', location: 'Mairie de Préguillac' },
         { time: '15h00', title: 'Cérémonie religieuse', location: 'Église de Préguillac' },

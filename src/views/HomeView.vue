@@ -9,7 +9,6 @@
 <script setup>
 import CountDown from '../components/CountDown.vue';
 import { useHead } from '@unhead/vue';
-import { defineComponent } from 'vue';
 
 useHead({
   title: 'Notre Mariage - Elyne & Benoît',
@@ -39,12 +38,6 @@ useHead({
   ]
 });
 
-defineComponent({
-  name: 'HomeView',
-  components: {
-    CountDown
-  }
-});
 
 
 </script>

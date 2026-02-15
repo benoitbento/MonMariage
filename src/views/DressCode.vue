@@ -29,7 +29,6 @@
 
 import WeddingCard from '@/components/WeddingCard.vue';
 import { useHead } from '@unhead/vue';
-import { defineComponent } from 'vue';
 
 useHead({
   title: 'Dress Code - Notre Mariage',
@@ -41,10 +40,6 @@ useHead({
   ]
 });
 
-defineComponent({
-  name: 'DressCode',
-  components: { WeddingCard },
-});
 
  const belts= [
         { color: 'white', class: 'white', label: 'Ceinture blanche', desc: '0-1 an de couple' },

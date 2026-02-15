@@ -4,7 +4,7 @@
       <img src="@/assets/flowers-divider.png" class="divider-icon" alt="Séparateur floral: début de notre histoire"
         loading="lazy" />
     </div>
-    <section class="history" itemscope itemtype="https://schema.org/Person">
+    <section class="history">
       <div class="history__container">
 
         <p class="history__text">Nous nous sommes rencontrés à Bordeaux, en 2019, au karaté. Benoît a été sonné par le
@@ -201,7 +201,6 @@
 <script setup>
 import WeddingCard from '@/components/WeddingCard.vue'
 import { useHead } from '@unhead/vue'
-import { defineComponent } from 'vue';
 
 useHead({
   title: 'Histoire Commune - Notre Mariage',
@@ -210,9 +209,5 @@ useHead({
   ]
 });
 
-defineComponent({
-  name: 'CommonHistory',
-  components: { WeddingCard }
-});
 
 </script>
