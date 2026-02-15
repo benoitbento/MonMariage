@@ -1,9 +1,30 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Découvrez notre histoire d'amour et les détails de notre mariage. Consultez le programme, le dress code, les adresses et les informations pratiques.">
+    <meta name="keywords" content="mariage, wedding, amour, événement, cérémonie">
+    <meta name="theme-color" content="#f0e6d2">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Notre Mariage - Une Belle Aventure">
+    <meta property="og:description" content="Découvrez notre histoire d'amour et les détails de notre mariage">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="<%= BASE_URL %>wedding-og.jpg">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Notre Mariage - Une Belle Aventure">
+    <meta name="twitter:description" content="Découvrez notre histoire d'amour et les détails de notre mariage">
+    <meta name="twitter:image" content="<%= BASE_URL %>wedding-og.jpg">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.elyneetbenoit.fr/">
+    
     <link rel="icon" href="<%= BASE_URL %>WebSiteIcon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
     <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
@@ -17,6 +38,5 @@
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
-    <!-- built files will be auto injected -->
   </body>
 </html>

@@ -1,17 +1,17 @@
 <template>
     <v-fade-transition>
         <v-container class="countdown-champetre text-center">
-            <h2 class="script-title title-wrapper">Le grand jour approche !
+            <h1 class="script-title title-wrapper">Le grand jour approche !
                 <div class="local-flowers">
-                    <img src="@/assets/flowers-divider.png" class="local-divider-icon" alt="" />
+                    <img src="@/assets/flowers-divider.png" class="local-divider-icon" alt="Séparateur floral décoratif" loading="lazy" />
                 </div>
-            </h2>
+            </h1>
 
             <v-row justify="center" class="mt-10">
                 <v-col cols="6" md="3" v-for="(value, unit) in countdownItems" :key="unit">
                     <div class="wreath-container">
-                        <img src="@/assets/flower-wreath.png" class="wreath-img" alt="" />
-                        <div class="inner-circle">
+                        <img src="@/assets/flower-wreath.png" class="wreath-img" alt="Couronne florale décorative" loading="lazy" />
+                        <div class="inner-circle" role="status" :aria-label="` Compte à rebours ${unit} = ${value}`">
                             <div class="count">{{ value }}</div>
                             <div class="label">{{ unit }}</div>
                         </div>

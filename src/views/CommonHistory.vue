@@ -2,9 +2,9 @@
 <template>
   <WeddingCard title ="Notre histoire">
     <div class="divider">
-      <img src="@/assets/flowers-divider.png" class="divider-icon" alt="" />
+      <img src="@/assets/flowers-divider.png" class="divider-icon" alt="Séparateur floral: début de notre histoire" loading="lazy" />
     </div>
-    <section class="history">
+    <section class="history" itemscope itemtype="https://schema.org/Person">
       <div class="history__container">
 
         <p class="history__text">Nous nous sommes rencontrés à Bordeaux, en 2019, au karaté. Benoît a été sonné par le
@@ -32,11 +32,11 @@
       </div>
     </section>
     <div class="divider">
-      <img src="@/assets/flowers-divider.png" class="divider-icon" alt="" />
+      <img src="@/assets/flowers-divider.png" class="divider-icon" alt="Séparateur floral: fin de notre histoire" loading="lazy" />
     </div>
     <div class="photo-container">
       <div class="ornate-frame">
-        <img src="@/assets/photo-couple.jpg" alt="Benoît et Elyne" class="couple-photo" />
+        <img src="@/assets/photo-couple.jpg" alt="Photo du couple Benoît et Elyne lors de leurs fiançailles à Budapest en juin 2025" class="couple-photo" loading="lazy" />
       </div>
     </div>
   </WeddingCard>
