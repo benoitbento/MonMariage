@@ -1,20 +1,50 @@
 <template>
-      <CountDown/>
+  <CountDown />
 
-<!-- <v-container>
+  <!-- <v-container>
         <h1>Bienvenue à notre mariage 💍</h1>
     </v-container> -->
-    </template>
+</template>
 
-<script>
+<script setup>
 import CountDown from '../components/CountDown.vue';
-export default {
+import { useHead } from '@unhead/vue';
+import { defineComponent } from 'vue';
 
-    name: 'HomeView',
-    components: {
-      CountDown
+useHead({
+  title: 'Notre Mariage - Elyne & Benoît',
+  meta: [
+    { name: 'description', content: 'Tous les détails de notre union le 1er juin 2026.' }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      key: 'structured-data', // Clé unique pour éviter les doublons
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Mariage d'Elyne et Benoît",
+        "startDate": "2026-06-01T14:00:00+02:00",
+        "location": {
+          "@type": "Place",
+          "name": "Château de la Mariée",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lille",
+            "addressCountry": "FR"
+          }
+        }
+      })
     }
+  ]
+});
+
+defineComponent({
+  name: 'HomeView',
+  components: {
+    CountDown
   }
+});
+
 
 </script>
-  

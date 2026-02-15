@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createHead } from '@unhead/vue/client'
 import App from './App.vue'
 import router from './router'
 
@@ -15,6 +16,7 @@ const vuetify = createVuetify({
 })
 
 const app = createApp(App)
+const head = createHead()
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -53,4 +55,8 @@ script.type = 'application/ld+json'
 script.textContent = JSON.stringify(structuredData)
 document.head.appendChild(script)
 
-app.use(router).use(vuetify).mount('#app')
+app.use(head)
+app.use(router)
+app.use(vuetify) // On utilise app.use pour chaque plugin proprement
+
+app.mount('#app')
