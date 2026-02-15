@@ -4,7 +4,7 @@
     "module": "esnext",
     "moduleResolution": "bundler", // Remplace "node" par "bundler" pour les outils modernes (Image 5)
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
     "lib": [
       "esnext",
