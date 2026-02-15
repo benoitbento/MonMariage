@@ -36,26 +36,23 @@
     </WeddingCard>
   </template>
 
-<script>
+<script setup>
 import WeddingCard from '@/components/WeddingCard.vue';
+import { useHead } from '@unhead/vue';
 
+useHead({
+  title: 'Planning - Notre Mariage',
+  meta: [
+    { name: 'description', content: 'Découvrez le planning de notre mariage.' }
+  ]
+});
 
-export default {
-  name: 'PlanningWholeDay',
-  components: {
-    WeddingCard
-  },
-  data() {
-    return {
-      saturdayEvents: [
+ const saturdayEvents =[
         { time: '14h00', title: 'Cérémonie civile', location: 'Mairie de Préguillac' },
         { time: '15h00', title: 'Cérémonie religieuse', location: 'Église de Préguillac' },
         { time: '16h30', title: 'Cortège', location: "Direction l'Abbaye de Fontdouce", note: '30 min de route' },
         { time: '17h00', title: 'Vin d’honneur & Repas', location: 'Abbaye de Fontdouce' }
-      ]
-    };
-  },
-}
+      ];
 
 </script>
 
@@ -75,9 +72,11 @@ export default {
 
 .timeline {
   position: relative;
-  margin: 40px auto; /* Centre le conteneur */
+  margin: 40px auto;
+  /* Centre le conteneur */
   width: 100%;
-  max-width: 400px; /* Limite la largeur pour que ça reste élégant */
+  max-width: 400px;
+  /* Limite la largeur pour que ça reste élégant */
 }
 
 /* On crée la ligne verticale pile au milieu */
@@ -86,7 +85,8 @@ export default {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 30%; /* La ligne sera à 30% de la largeur du bloc */
+  left: 30%;
+  /* La ligne sera à 30% de la largeur du bloc */
   width: 1.5px;
   background-color: #f0e6d2;
 }
@@ -103,7 +103,8 @@ export default {
 .event-item::after {
   content: '';
   position: absolute;
-  left: calc(30% - 10px); /* 10px = moitié de la largeur du point */
+  left: calc(30% - 10px);
+  /* 10px = moitié de la largeur du point */
   top: 4px;
   width: 20px;
   height: 20px;
@@ -115,7 +116,7 @@ export default {
 
 .time {
   /* On force l'heure à prendre l'espace à gauche de la ligne */
-  width: 30%; 
+  width: 30%;
   text-align: right;
   padding-right: 25px;
   box-sizing: border-box;
@@ -137,9 +138,10 @@ export default {
 /* Ajustement pour le titre du jour pour qu'il s'aligne visuellement */
 .day-title {
   /* On ajoute une petite marge pour compenser le décalage de la timeline */
-  padding-right: 0; 
+  padding-right: 0;
   text-align: center;
 }
+
 .event-details h4 {
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 700;
@@ -164,12 +166,11 @@ export default {
   border: 1px dashed #c5a059;
   border-radius: 8px;
   /* On la sort de la timeline pour qu'elle soit centrée sur toute la carte */
-  clear: both; 
+  clear: both;
   text-align: center;
 }
 
 .mt-8 {
   margin-top: 50px;
 }
-
 </style>

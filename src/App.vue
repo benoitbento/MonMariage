@@ -1,9 +1,14 @@
 <template>
   <v-app>
-    <NavBar />
+    <header>
+      <NavBar />
+    </header>
     <v-main>
-      <router-view />
+        <router-view />
     </v-main>
+    <footer role="contentinfo" class="footer-seo">
+      <!-- Footer optionnel pour le SEO -->
+    </footer>
   </v-app>
 
 </template>

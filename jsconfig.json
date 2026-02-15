@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",         // Remplace "es5" par "ESNext" (Image 6)
     "module": "esnext",
-    "baseUrl": "./",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler", // Remplace "node" par "bundler" pour les outils modernes (Image 5)
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["./src/*"]
     },
     "lib": [
       "esnext",
       "dom",
       "dom.iterable",
       "scripthost"
-    ]
+    ],
+    "ignoreDeprecations": "5.0" // Optionnel : pour faire taire les alertes restantes (Image 7)
+    ],
+    "ignoreDeprecations": "5.0" // Optionnel : pour faire taire les alertes restantes (Image 7)
   }
 }

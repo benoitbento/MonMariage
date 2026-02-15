@@ -1,8 +1,8 @@
-
 <template>
-  <WeddingCard title ="Notre histoire">
+  <WeddingCard title="Notre histoire">
     <div class="divider">
-      <img src="@/assets/flowers-divider.png" class="divider-icon" alt="" />
+      <img src="@/assets/flowers-divider.png" class="divider-icon" alt="Séparateur floral: début de notre histoire"
+        loading="lazy" />
     </div>
     <section class="history">
       <div class="history__container">
@@ -32,40 +32,54 @@
       </div>
     </section>
     <div class="divider">
-      <img src="@/assets/flowers-divider.png" class="divider-icon" alt="" />
+      <img src="@/assets/flowers-divider.png" class="divider-icon" alt="Séparateur floral: fin de notre histoire"
+        loading="lazy" />
     </div>
     <div class="photo-container">
       <div class="ornate-frame">
-        <img src="@/assets/photo-couple.jpg" alt="Benoît et Elyne" class="couple-photo" />
+        <img src="@/assets/photo-couple.jpg"
+          alt="Photo du couple Benoît et Elyne lors de leurs fiançailles à Budapest en juin 2025" class="couple-photo"
+          loading="lazy" />
       </div>
     </div>
   </WeddingCard>
 </template>
 <style scoped>
-
 .side-flowers {
   position: absolute;
   top: 0;
   right: 0;
-  height: 100%;       /* Prend toute la hauteur */
-  width: auto;         /* Garde le ratio */
-  max-width: 150px;    /* "Moins épais" : ajuste cette valeur selon ton goût */
-  opacity: 0.4;        /* "Un peu transparent" */
-  object-fit: cover;   /* Permet de bien remplir la hauteur */
-  pointer-events: none; /* Pour que l'image ne gêne pas le clic sur le texte */
+  height: 100%;
+  /* Prend toute la hauteur */
+  width: auto;
+  /* Garde le ratio */
+  max-width: 150px;
+  /* "Moins épais" : ajuste cette valeur selon ton goût */
+  opacity: 0.4;
+  /* "Un peu transparent" */
+  object-fit: cover;
+  /* Permet de bien remplir la hauteur */
+  pointer-events: none;
+  /* Pour que l'image ne gêne pas le clic sur le texte */
   z-index: 1;
 }
 
-.divider-icon{
+.divider-icon {
   display: block;
-  margin: 1.5rem auto; /* Un peu moins d'espace en haut/bas */
-  width: 100%;          /* Utilise la largeur disponible... */
-  max-width: 180px;    /* ...mais s'arrête à 180px (ajuste ici pour la taille) */
+  margin: 1.5rem auto;
+  /* Un peu moins d'espace en haut/bas */
+  width: 100%;
+  /* Utilise la largeur disponible... */
+  max-width: 180px;
+  /* ...mais s'arrête à 180px (ajuste ici pour la taille) */
   height: auto;
-  opacity: 0.6;        /* Légèrement plus visible que 0.4 pour voir les détails */
-  filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.05)); /* Optionnel : donne un peu de relief */
+  opacity: 0.6;
+  /* Légèrement plus visible que 0.4 pour voir les détails */
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.05));
+  /* Optionnel : donne un peu de relief */
 }
-  .photo-section {
+
+.photo-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,7 +88,8 @@
 
 .frame-container {
   position: relative;
-  width: 300px; /* Ajustez selon la taille de votre cadre */
+  width: 300px;
+  /* Ajustez selon la taille de votre cadre */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,8 +98,10 @@
 .wedding-frame {
   width: 100%;
   height: auto;
-  z-index: 2; /* Le cadre passe devant la photo si besoin */
-  pointer-events: relative; /* Permet de cliquer sur la photo à travers le cadre */
+  z-index: 2;
+  /* Le cadre passe devant la photo si besoin */
+  pointer-events: relative;
+  /* Permet de cliquer sur la photo à travers le cadre */
 }
 
 
@@ -95,7 +112,8 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 450px; /* Taille optimale pour le cadre */
+  max-width: 450px;
+  /* Taille optimale pour le cadre */
   margin: 0 auto;
 }
 
@@ -134,11 +152,13 @@
   max-width: 100%;
   display: block;
 }
+
 .photo-container {
   display: flex;
   justify-content: center;
   margin-top: 30px;
 }
+
 .ornate-frame {
   border: 12px solid transparent;
   border-image: url('@/assets/frame-dentelle.png') 40 round;
@@ -146,9 +166,11 @@
   border-radius: 12px;
   /* background-color: #fffaf5; /* crème doux pour contraste */
 }
+
 .couple-photo {
   display: block;
-  width: 220px;        /* légèrement réduit mais pas trop */
+  width: 220px;
+  /* légèrement réduit mais pas trop */
   max-width: 140%;
   height: auto;
   margin: 0 auto;
@@ -161,26 +183,31 @@
 .history__text {
   margin-bottom: 25px;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 300; /* Plus fin pour plus d'élégance */
+  font-weight: 300;
+  /* Plus fin pour plus d'élégance */
   line-height: 1.8;
   color: #555;
-  text-align: center; /* Souvent plus joli pour les faire-part */
+  text-align: center;
+  /* Souvent plus joli pour les faire-part */
 }
 
 /* Optionnel : mettre en gras les lieux ou dates clés */
 .history__text strong {
-  color: #c5a059; /* Rappel du doré */
+  color: #c5a059;
+  /* Rappel du doré */
   font-weight: 500;
 }
-
 </style>
-<script>
-// import PageContainer from '@/components/Container.vue'
+<script setup>
 import WeddingCard from '@/components/WeddingCard.vue'
+import { useHead } from '@unhead/vue'
 
-export default {
-  name: 'CommonHistory',
-  components: { WeddingCard }
-}
+useHead({
+  title: 'Histoire Commune - Notre Mariage',
+  meta: [
+    { name: 'description', content: 'Découvrez l\'histoire commune de notre mariage.' }
+  ]
+});
+
 
 </script>
