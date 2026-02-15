@@ -13,5 +13,7 @@
       "scripthost"
     ],
     "ignoreDeprecations": "5.0" // Optionnel : pour faire taire les alertes restantes (Image 7)
+    ],
+    "ignoreDeprecations": "5.0" // Optionnel : pour faire taire les alertes restantes (Image 7)
   }
 }
