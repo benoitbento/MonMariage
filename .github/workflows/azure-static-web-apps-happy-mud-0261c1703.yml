@@ -5,9 +5,13 @@ on:
     branches:
       - master
   pull_request:
-    types: [opened, synchronize, reopened, closed]
+    types: [opened, synchronize, reopened]
     branches:
       - master
+  
+  workflow_run:
+    workflows: ["Azure Static Web Apps CI/CD"]
+    types: [completed]
 
 jobs:
   build_and_deploy_job:
@@ -47,18 +51,21 @@ jobs:
           
 
   close_pull_request_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action == 'closed')
+    if:  >
+      github.event_name == 'workflow_run' &&
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.pull_requests[0].state == 'closed'
     runs-on: ubuntu-latest
     name: Close Pull Request Job
     permissions:
        id-token: write
     steps:
       - name: Close Pull Request
-        id: closepullrequest
+        # id: closepullrequest
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           action: "close"
           app_location: "/" 
           api_location: ""
-          output_location: "dist" # Built app content directory - optional
