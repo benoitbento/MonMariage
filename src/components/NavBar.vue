@@ -13,11 +13,11 @@
       <v-spacer />
       <nav class="nav-items d-none d-md-flex align-center mr-4" aria-label="Menu principal">
         <v-btn variant="text" to="/" aria-label="Accueil">Bienvenue</v-btn>
-        <v-btn variant="text" to="/CommonHistory" aria-label="Lire notre histoire">Notre histoire</v-btn>
+        <!-- <v-btn variant="text" to="/CommonHistory" aria-label="Lire notre histoire">Notre histoire</v-btn>
         <v-btn variant="text" to="/DressCode" aria-label="Consulter le dress code">Dress code</v-btn>
         <v-btn variant="text" to="/PlanningWholeDay" aria-label="Voir le planning du jour">Planning</v-btn>
         <v-btn variant="text" to="/BookingAround" aria-label="Réservations et hébergements">Où séjourner</v-btn>
-        <v-btn variant="text" to="/AdressesWedding" aria-label="Consulter les adresses utiles">Adresses</v-btn>
+        <v-btn variant="text" to="/AdressesWedding" aria-label="Consulter les adresses utiles">Adresses</v-btn> -->
       </nav>
       <v-app-bar-nav-icon class="d-md-none mr-2" @click="drawer = !drawer" color="#c5a059"
         icon="mdi-heart-outline" aria-label="Menu mobile"></v-app-bar-nav-icon>
@@ -26,11 +26,11 @@
       <nav class="mt-4" aria-label="Menu mobile">
         <v-list>
           <v-list-item to="/" title="Bienvenue" prepend-icon="mdi-home-heart" aria-label="Accueil"></v-list-item>
-          <v-list-item to="/CommonHistory" title="Notre histoire" prepend-icon="mdi-book-open-page-variant" aria-label="Lire notre histoire"></v-list-item>
+          <!-- <v-list-item to="/CommonHistory" title="Notre histoire" prepend-icon="mdi-book-open-page-variant" aria-label="Lire notre histoire"></v-list-item>
           <v-list-item to="/DressCode" title="Dress code" prepend-icon="mdi-tshirt-crew" aria-label="Consulter le dress code"></v-list-item>
           <v-list-item to="/PlanningWholeDay" title="Planning" prepend-icon="mdi-calendar-heart" aria-label="Voir le planning du jour"></v-list-item>
           <v-list-item to="/BookingAround" title="Où séjourner" prepend-icon="mdi-bed" aria-label="Réservations et hébergements"></v-list-item>
-          <v-list-item to="/AdressesWedding" title="Adresses" prepend-icon="mdi-map-marker-radius" aria-label="Consulter les adresses utiles"></v-list-item>
+          <v-list-item to="/AdressesWedding" title="Adresses" prepend-icon="mdi-map-marker-radius" aria-label="Consulter les adresses utiles"></v-list-item> -->
         </v-list>
       </nav>
     </v-navigation-drawer>
