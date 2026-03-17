@@ -45,7 +45,6 @@ onMounted(async () => {
     // --- Marqueur principal (Abbaye) ---
     const abbayeMarker = new atlas.HtmlMarker({
       position: abbayeCoords,
-      // On utilise une div avec une classe pour le CSS
       htmlContent: '<div class="pin-wedding">💍</div>',
       pixelOffset: [0, -15]
     });
