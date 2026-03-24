@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ESNext",         // Remplace "es5" par "ESNext" (Image 6)
+    "target": "ESNext",         
     "module": "esnext",
-    "moduleResolution": "bundler", // Remplace "node" par "bundler" pour les outils modernes (Image 5)
+    "moduleResolution": "bundler", 
     "paths": {
       "@/*": ["./src/*"]
     },
@@ -12,8 +12,6 @@
       "dom.iterable",
       "scripthost"
     ],
-    "ignoreDeprecations": "5.0" // Optionnel : pour faire taire les alertes restantes (Image 7)
-    ],
-    "ignoreDeprecations": "5.0" // Optionnel : pour faire taire les alertes restantes (Image 7)
+    "ignoreDeprecations": "5.0" 
   }
 }

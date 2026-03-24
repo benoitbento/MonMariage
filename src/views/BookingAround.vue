@@ -29,14 +29,14 @@ onMounted(async () => {
   const map = new atlas.Map('azureMap', {
     center: abbayeCoords,
     zoom: 12,
-    style: 'grayscale_light', // Change 'main' par un style plus doux
+    style: 'grayscale_light', 
     language: 'fr-FR',
     authOptions: {
       authType: 'subscriptionKey',
       subscriptionKey: mapKey,
     },
     dragPanInteraction: {
-      freeForm: false // Empêche la carte de capturer le scroll vertical trop facilement
+      freeForm: false 
     }
   });
 
