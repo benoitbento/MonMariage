@@ -51,7 +51,7 @@ useHead({
         { time: '14h00', title: 'Cérémonie civile', location: 'Mairie de Préguillac' },
         { time: '15h00', title: 'Cérémonie religieuse', location: 'Église de Préguillac' },
         { time: '16h30', title: 'Cortège', location: "Direction l'Abbaye de Fontdouce", note: '30 min de route' },
-        { time: '18h00', title: 'Vin d’honneur', location: 'Abbaye de Fontdouce' }
+        { time: '18h00', title: 'Vin d’honneur', location: 'Abbaye de Fontdouce' },
         { time: '20H30', title: 'Diner', location: 'Abbaye de Fontdouce' }
       ];
 
