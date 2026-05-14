@@ -12,6 +12,7 @@
     "azure-maps-control": "^3.6.1",
     "core-js": "^3.8.3",
     "sass": "^1.93.0",
+    "update": "^0.7.4",
     "vue": "^3.2.13",
     "vue-router": "^4.5.1",
     "vuetify": "^3.10.2"
