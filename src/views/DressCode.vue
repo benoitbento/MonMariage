@@ -42,14 +42,14 @@ useHead({
 
 
  const belts= [
-        { color: 'white', class: 'white', label: 'Ceinture blanche', desc: '0-1 an de couple' },
-        { color: 'yellow', class: 'yellow', label: 'Ceinture jaune', desc: '1-3 ans de couple' },
-        { color: 'orange', class: 'orange', label: 'Ceinture orange', desc: '3-5 ans de couple' },
-        { color: 'green', class: 'green', label: 'Ceinture verte', desc: '5-10 ans de couple' },
-        { color: 'blue', class: 'blue', label: 'Ceinture bleue', desc: '10-20 ans de couple' },
-        { color: 'brown', class: 'brown', label: 'Ceinture marron', desc: '20-30 ans de couple' },
-        { color: 'black', class: 'black', label: 'Ceinture noire', desc: '30-40 ans de couple' },
-        { color: 'red', class: 'red', label: 'Ceinture rouge', desc: '40 ans et plus de couple' },
+        { color: 'white', class: 'white', label: 'Ceinture blanche', desc: 'Célibataire' },
+        { color: 'yellow', class: 'yellow', label: 'Ceinture jaune', desc: '1 an ou moins' },
+        { color: 'orange', class: 'orange', label: 'Ceinture orange', desc: '1-3 ans de couple' },
+        { color: 'green', class: 'green', label: 'Ceinture verte', desc: '3-6 ans de couple' },
+        { color: 'blue', class: 'blue', label: 'Ceinture bleue', desc: '6-10 ans de couple' },
+        { color: 'brown', class: 'brown', label: 'Ceinture marron', desc: '10-15 ans de couple' },
+        { color: 'black', class: 'black', label: 'Ceinture noire', desc: '15-20 ans de couple' },
+        { color: 'red', class: 'red', label: 'Ceinture rouge', desc: '20 ans et plus de couple' },
       ];
 </script>
 <style>
