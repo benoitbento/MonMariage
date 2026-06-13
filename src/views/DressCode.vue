@@ -21,7 +21,7 @@
           rouge.</p>
       </div>
       <div class="example-box">
-        <p><strong>Exemple Féminin:</strong> Si Jeanine est en couple depuis 3 ans, elle pourra porter un chapeau de orange.</p>
+        <p><strong>Exemple Féminin:</strong> Si Jeanine est en couple depuis 3 ans, elle pourra porter un chapeau orange.</p>
       </div>
     </section>
   </WeddingCard>
