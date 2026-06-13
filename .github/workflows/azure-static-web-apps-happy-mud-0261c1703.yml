@@ -57,6 +57,17 @@ jobs:
     permissions:
        id-token: write
     steps:
+      - uses: actions/checkout@v3
+      - name: Install OIDC Client from Core Package
+        run: yarn add @actions/core@1.6.0 @actions/http-client
+      - name: Get Id Token
+        uses: actions/github-script@v6
+        id: idtoken
+        with:
+           script: |
+               const coredemo = require('@actions/core')
+               return await coredemo.getIDToken()
+           result-encoding: string
       - name: Close Pull Request
         uses: Azure/static-web-apps-deploy@v1
         with:
@@ -64,3 +75,4 @@ jobs:
           action: "close"
           app_location: "/" 
           api_location: ""
+          github_id_token: ${{ steps.idtoken.outputs.result }}
