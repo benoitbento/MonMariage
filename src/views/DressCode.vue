@@ -17,8 +17,11 @@
       </div>
 
       <div class="example-box">
-        <p><strong>Exemple :</strong> Si Baltazar est en couple depuis 46 ans, il pourra porter une pochette de costume
+        <p><strong>Exemple Masculin:</strong> Si Baltazar est en couple depuis 46 ans, il pourra porter une pochette de costume
           rouge.</p>
+      </div>
+      <div class="example-box">
+        <p><strong>Exemple Féminin:</strong> Si Jeanine est en couple depuis 3 ans, elle pourra porter un chapeau orange.</p>
       </div>
     </section>
   </WeddingCard>
